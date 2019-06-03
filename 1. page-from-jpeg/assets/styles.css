@@ -1,0 +1,295 @@
+html {
+	font-family: Arial, sans-serif;
+	color: #757575;
+}
+
+h1 {
+	font-size: 24px;
+	font-weight: normal;
+	color: #383838;
+}
+
+h2 {
+	font-size: 18px;
+	font-weight: normal;
+	color: #383838;
+	padding: 12px 0px 18px 0px;
+}
+
+p {
+	line-height: 1.5;
+}
+
+a:link, a:visited {
+	color: #009DF2;
+	text-decoration: none;
+}
+
+input {
+  border: 1px solid #757575;
+  border-radius: 4px;
+  padding: 6px 6px 6px 28px;
+  background-image: url(search.svg);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 6px 6px;
+  box-sizing: border-box;
+}
+
+.container {
+	max-width: 984px;
+	margin: 0 auto;
+}
+
+#header {
+	height:200px;
+	background-image: url(background-image.jpg);
+	background-position: 0% 35%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+@media (max-width: 640px) {
+	#header {
+		height: 100px;
+	}
+}
+
+#main {
+	display: grid;
+}
+
+#logo {
+	position: relative;
+	top: -71px;
+	left: 30px;
+	margin-bottom: -71px;
+	height: 142px;
+	width: 142px;
+	background-image: url(logo.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 50%;
+}
+
+@media (max-width: 640px) {
+	#logo {
+		top: -35px;
+		margin-bottom: -35px;
+		height: 71px;
+		width: 71px;
+	}
+}
+
+#card {
+	display: grid;
+	grid-gap: 14px;
+	grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+}
+
+#heading {
+	grid-column: 1 / -1;
+}
+
+#contact {
+	grid-row: 2 / -1;
+}
+
+@media (max-width: 640px) {
+	#card {
+		grid-template: none;
+    	grid-auto-flow: row;
+	}
+
+	#contact {
+		grid-row: 4;
+	}
+}
+
+#focus-items {
+}
+
+#focus-items > span {
+	display: inline-block;
+	margin: 12px 12px 12px 0px;
+	color: #383838;
+	background-color: #fafafa;
+}
+
+#focus-items > span > span {
+	vertical-align: middle;
+	line-height: 36px;
+	padding: 12px;
+}
+
+#focus-items > span > img {
+	width: 36px;
+	height: 36px;
+	float: left;
+}
+
+#politics img {
+	background-color: #5A4D99;
+}
+
+#public img {
+	background-color: #1A587A;
+}
+
+#culture img {
+	background-color: #BFCC36;
+}
+
+#profile {
+	display: grid;
+	grid-gap: 12px;
+	grid-template-columns: 48px auto;
+	grid-template-rows: 1fr 1fr;
+}
+
+#profile img {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	grid-row: 1 / -1;
+}
+
+.link > img {
+	width: 36px;
+	height: 36px;
+	float: left;
+}
+
+.link > a {
+	padding: 6px;
+	vertical-align: middle;
+	line-height: 36px;
+}
+
+#columns {
+	background-color: #fafafa;
+}
+
+#articles {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-gap: 14px;
+}
+
+#search {
+	grid-column: 1 / -1;
+}
+
+#search > * {
+	display: inline-block;
+}
+
+#search > input {
+	width: 200px;
+	margin-top: 16px;
+	float: right;
+}
+
+@media (max-width: 640px) {
+	#search > h1 {
+		display: none;
+	}
+
+	#search > input {
+		width: 100%;
+		float: none;
+	}
+}
+
+.column {
+	position: relative;
+	background-color: #fff;
+	min-height: 450px;
+	padding: 18px 18px;
+}
+
+.column-header {
+	height: 64px;
+	margin-bottom: 12px;
+}
+
+.column-header > img {
+	width: 64px;
+	height: 64px;
+	float: left;
+	margin: 0px 12px 12px 0px;
+}
+
+.author {
+	font-size: 14px;
+}
+
+.description {
+	font-size: 14px;
+}
+
+.label-button {
+	border: 1px solid #009DF2;
+	border-radius: 3px;
+	color: #009DF2;
+	background-color: #FFFFFF;
+	font-weight: bold;
+}
+
+.details {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	margin: 24px;
+}
+
+.details-button {
+	border-style: none;
+	border-radius: 3px;
+	color: #FFFFFF;
+	background-color: #FFA500;
+	font-weight: bold;
+	width: 100%;
+	padding: 6px 0px;
+}
+
+.details-text {
+	margin-bottom: 12px;
+	text-align: right;
+}
+
+.small-details-text {
+	font-size: 12px;
+	margin-right: 0px;
+}
+
+.details-heading {
+	font-size: 24px;
+	color: #383838;
+}
+
+@media (max-width: 640px) {
+	.column {
+		grid-column: 1 / -1;
+		min-height: auto;
+	}
+	.description {
+		display: none;
+	}
+
+	.details-button {
+		display: none;
+	}
+
+	.small-details-text {
+		display: none;
+	}
+
+	.details {
+		margin: 6px;
+	}
+}

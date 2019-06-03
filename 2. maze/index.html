@@ -363,6 +363,10 @@
             left: Math.floor(Math.random() * 10),
             top: Math.floor(Math.random() * 10)
         };
+        let previousPosition = {
+            left: -1,
+            top: -1
+        };
 
         let piecePublicApi = {
             isThereWay() {
@@ -390,6 +394,9 @@
                     return false;
                 }
 
+                previousPosition.left = position.left;
+                previousPosition.top = position.top;
+
                 switch (direction) {
                     case 0:
                         position.top -= 1;
@@ -411,6 +418,28 @@
             },
             amIFree() {
                 return isPieceOut();
+            },
+            wasIThere(){
+                let currentPosition = {
+                    left: position.left,
+                    top: position.top
+                }
+                switch (direction) {
+                    case 0:
+                        currentPosition.top -= 1;
+                        break;
+                    case 1:
+                        currentPosition.left += 1;
+                        break;
+                    case 2:
+                        currentPosition.top += 1;
+                        break;
+                    case 3:
+                        currentPosition.left -= 1;
+                        break;
+                    default:
+                }
+                return previousPosition.left == currentPosition.left && previousPosition.top == currentPosition.top;
             }
         };
 
@@ -451,12 +480,25 @@
     }
 
     function escapePlan() {
+        let attemptsToGo = 0;
         const piece = createPiece();
-        // piece.isThereWay();
-        // piece.goForward();
-        // piece.turnRight();
-        // piece.turnLeft();
-        // piece.amIFree();
+        let id = setInterval(()=>{
+            if (piece.amIFree())
+            {
+                clearInterval(id);
+                resetField();
+            }
+            else
+            {
+                if (piece.isThereWay() && (!piece.wasIThere() || attemptsToGo > 2)) {
+                    piece.goForward();
+                    attemptsToGo = 0;
+                }else{
+                    piece.turnRight();
+                    attemptsToGo++;
+                }
+            }
+        })
     }
 
     function main() {
