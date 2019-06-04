@@ -29,3 +29,5 @@ Don't fork from this repository!
 
 One more thing: be brave and creative :)
 We are waiting for you to join our team!
+
+My email: velikanova.alenka@gmail.com
