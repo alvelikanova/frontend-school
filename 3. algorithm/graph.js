@@ -7,7 +7,7 @@
 // graph.addDirectedEdge("node3", "node2", 1);
 // graph.addDirectedEdge("node1", "node3", 1);
 // graph.display();
-// graph.floydWarshallAlgorithm_chestnoStyreno("node1", "node2");
+// graph.floydWarshallAlgorithm("node1", "node2");
 
 class Graph {
    constructor() {
@@ -132,7 +132,7 @@ class Graph {
       console.log(graph);
    }
 
-   floydWarshallAlgorithm_chestnoStyreno(node1, node2) {
+   floydWarshallAlgorithm(node1, node2) {
       if (!this.hasNode(node1) || !this.hasNode(node2)) {
          return Infinity;
       }
